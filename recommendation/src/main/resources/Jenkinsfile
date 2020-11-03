@@ -29,7 +29,7 @@ pipeline {
             steps {
             	dir("recommendation") {
 					sh """
-						mvn clean package sonar:sonar -Dsonar.projectKey=recommendation-jeff -Dsonar.projectName=recommendation-jeff
+						mvn clean package sonar:sonar -Dsonar.projectKey=recommendation-108356019 -Dsonar.projectName=recommendation-jeff
 					"""
 				}
             }
@@ -52,7 +52,7 @@ pipeline {
             steps {
             	dir("recommendation/target") {
 					sh """
-						oc project ibm-jeff
+						oc project 108356019
 						oc start-build bc/recommendation --from-file recommendation-0.0.1-SNAPSHOT.jar -F
 					"""
 				}
